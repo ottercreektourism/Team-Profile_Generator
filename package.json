@@ -1,0 +1,24 @@
+{
+  "name": "team-profile_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ottercreektourism/Team-Profile_Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ottercreektourism/Team-Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/ottercreektourism/Team-Profile_Generator#readme"
+}
