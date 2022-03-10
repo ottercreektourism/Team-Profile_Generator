@@ -1,0 +1,49 @@
+header {
+    color: white;
+    background-color: rgb(242, 125, 66);
+    display: flex;
+    padding: 20px;
+    margin: 15px;
+    /* text-align: center; */
+    justify-content: center;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 15px;
+    background-color: rgb(200, 239, 249);
+}
+
+.row {margin: 0 -5px;}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.column {
+    float: left;
+    width: 33%;
+    padding: 0 10px;
+  }
+
+.card {
+    padding: 20px;
+    margin: 15px; 
+    border: 1px;
+}
+
+.card-header {
+    background-color: rgb(85, 141, 202);
+    color:white;
+    text-align: center;
+}
+
+.card-subtitle {
+    color: white;
+    border-bottom: 5px;
+}

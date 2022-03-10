@@ -1,42 +1,44 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHTML = require('./generateHtml');
+const generateHTML = require('./generateHtml.js');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
 const team = [];
 
-inquirer
-    .prompt([
-        {
-            type: 'input',
-            message: 'Name of team manager:',
-            name: 'managerName',
-        },
-        {
-            type: 'input',
-            message: 'Team Manager employee ID:',
-            name: 'tMID',
-        },
-        {
-            type: 'input',
-            message: 'Team manager email address:',
-            name: 'tMEmail',
-        },
-        {
-            type: 'input',
-            message: 'Office Number:',
-            name: 'officeNum',
-        },
+function renderManager() {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                message: 'Name of team manager:',
+                name: 'managerName',
+            },
+            {
+                type: 'input',
+                message: 'Team Manager employee ID:',
+                name: 'tMID',
+            },
+            {
+                type: 'input',
+                message: 'Team manager email address:',
+                name: 'tMEmail',
+            },
+            {
+                type: 'input',
+                message: 'Office Number:',
+                name: 'officeNum',
+            },
 
 
-    ])
+        ])
 
-    .then((response) => {
-        const manager = new Manager(response.managerName, response.tMID, response.tMEmail, response.officeNum)
-        team.push(manager);
-        teamMenu();
-    });
+        .then((response) => {
+            const manager = new Manager(response.managerName, response.tMID, response.tMEmail, response.officeNum)
+            team.push(manager);
+            teamMenu();
+        });
+}
 
 // teamMenu function gives user a choice of which new members to add, and then calls the appropriate function.
 function teamMenu() {
@@ -58,8 +60,8 @@ function teamMenu() {
                 renderEndTeam();
             }
         })
-
 }
+
 // renderIntern function asks the user information about the intern, pushes that to the team array, and then redirects user to team function of their choice.
 function renderIntern() {
     inquirer
@@ -123,8 +125,9 @@ function renderEngineer() {
             teamMenu();
         });
 }
-function renderEndTeam(response) {
-    fs.writeFile('index.html', generateHTML(response),
+function renderEndTeam() {
+    fs.writeFile('index.html', generateHTML(team),
         (err) => err ? console.error(err) : console.log('info stored!')
-    )
-}
+    )}
+
+renderManager();
