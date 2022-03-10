@@ -21,7 +21,6 @@ Given several prompts, the user enters information about each of the employees a
 
   >npm i
 
-  >node index.js
 
   ## Usage
   
@@ -40,6 +39,9 @@ Pull requests are welcome. For any major changes, please open an issue first to 
 
 In terminal, type:
 > npm test
+
+To run, type:
+> node index.js
 
 ## Questions
 
