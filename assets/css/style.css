@@ -34,7 +34,8 @@ body {
 .card {
     padding: 20px;
     margin: 15px; 
-    border: 1px;
+    background-color: white;
+    border: black;
 }
 
 .card-header {
